@@ -1,4 +1,6 @@
 const express = require('express')
+
+const cors = require('cors');
 const { buildSchema } = require("graphql")
 const { graphqlHTTP } = require("express-graphql")
 const mongoose = require('mongoose')
@@ -8,6 +10,8 @@ const Employee = require('./models/Employee');
 const User = require('./models/User');
 
 const app = express()
+
+app.use(cors());
 
 const SERVER_PORT = 4000;
 const MONGO_URI = process.env.MONGO_URI;

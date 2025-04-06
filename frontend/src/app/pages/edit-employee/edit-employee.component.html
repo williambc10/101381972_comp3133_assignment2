@@ -1,0 +1,27 @@
+<h2>Edit Employee</h2>
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+  <!-- same form fields as Add Employee -->
+  <label>First Name:</label>
+  <input formControlName="first_name" type="text"><br>
+  <label>Last Name:</label>
+  <input formControlName="last_name" type="text"><br>
+  <label>Email:</label>
+  <input formControlName="email" type="email"><br>
+  <label>Gender:</label>
+  <select formControlName="gender">
+    <option>Male</option>
+    <option>Female</option>
+    <option>Other</option>
+  </select><br>
+  <label>Designation:</label>
+  <input formControlName="designation" type="text"><br>
+  <label>Salary:</label>
+  <input formControlName="salary" type="number"><br>
+  <label>Date of Joining:</label>
+  <input formControlName="date_of_joining" type="date"><br>
+  <label>Department:</label>
+  <input formControlName="department" type="text"><br><br>
+
+  <button type="submit">Update Employee</button>
+  <button type="button" (click)="cancel()">Cancel</button>
+</form>

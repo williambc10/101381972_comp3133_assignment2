@@ -41,19 +41,29 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { GraphQLModule } from './graphql.module';
+import { EmployeeListComponent } from './pages/employee-list/employee-list.component';
+import { EmployeeFilterPipe } from './pipes/employee-filter.pipe';
+import { AddEmployeeComponent } from './pages/add-employee/add-employee.component';
+import { EditEmployeeComponent } from './pages/edit-employee/edit-employee.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    EmployeeListComponent,
+    EmployeeFilterPipe,
+    AddEmployeeComponent,
+    EditEmployeeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    FormsModule,
     HttpClientModule,
     GraphQLModule // ✅ Apollo config already handled here
   ],
