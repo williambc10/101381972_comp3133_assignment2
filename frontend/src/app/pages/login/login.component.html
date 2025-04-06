@@ -1,8 +1,16 @@
-<h2>Login</h2>
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-  <label>Email:</label>
-  <input formControlName="email" type="email"><br><br>
-  <label>Password:</label>
-  <input formControlName="password" type="password"><br><br>
-  <button type="submit">Login</button>
-</form>
+<div class="auth-container">
+    <h2>Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <label>Email:</label>
+      <input formControlName="email" type="email" />
+      
+      <label>Password:</label>
+      <input formControlName="password" type="password" />
+      
+      <button type="submit" class="login-btn">Log In</button>
+    </form>
+  
+    <hr />
+    <p>Don’t have an account?</p>
+    <button routerLink="/signup" class="link-btn">Sign Up</button>
+  </div>
