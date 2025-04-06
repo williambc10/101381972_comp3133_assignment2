@@ -1,0 +1,14 @@
+<!-- pages/signup.component.html: -->
+<h2>Signup</h2>
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+  <label>Username:</label>
+  <input formControlName="username" type="text"><br><br>
+
+  <label>Email:</label>
+  <input formControlName="email" type="email"><br><br>
+
+  <label>Password:</label>
+  <input formControlName="password" type="password"><br><br>
+
+  <button type="submit">Create Account</button>
+</form>
