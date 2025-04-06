@@ -1,15 +1,3 @@
-/*import { Component } from '@angular/core';
-
-@Component({
-  selector: 'app-edit-employee',
-  standalone: false,
-  templateUrl: './edit-employee.component.html',
-  styleUrl: './edit-employee.component.css'
-})
-export class EditEmployeeComponent {
-
-}*/
-
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Apollo } from 'apollo-angular';
@@ -19,7 +7,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-edit-employee',
   standalone: false,
-  templateUrl: './edit-employee.component.html'
+  templateUrl: './edit-employee.component.html',
+  styleUrl: './edit-employee.component.css'
 })
 export class EditEmployeeComponent implements OnInit {
   employeeForm: FormGroup;

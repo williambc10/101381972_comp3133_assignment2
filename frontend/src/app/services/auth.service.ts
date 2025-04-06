@@ -1,13 +1,3 @@
-/*import { Injectable } from '@angular/core';
-
-@Injectable({
-  providedIn: 'root'
-})
-export class AuthService {
-
-  constructor() { }
-}*/
-
 import { Injectable } from '@angular/core';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
@@ -45,7 +35,7 @@ export class AuthService {
         }
       `,
       variables: { email, password },
-      fetchPolicy: 'no-cache' // Important to avoid cached login results
+      fetchPolicy: 'no-cache'
     });
   }
 }

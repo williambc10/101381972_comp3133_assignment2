@@ -1,15 +1,3 @@
-/*import { Component } from '@angular/core';
-
-@Component({
-  selector: 'app-employee-list',
-  standalone: false,
-  templateUrl: './employee-list.component.html',
-  styleUrl: './employee-list.component.css'
-})
-export class EmployeeListComponent {
-
-}*/
-
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from '../../services/employee.service';
 
@@ -29,10 +17,10 @@ export class EmployeeListComponent implements OnInit {
     this.employeeService.getAllEmployees().subscribe({
       next: (result: any) => {
         this.employees = result.data.getAllEmployees;
-        console.log('📥 Employees:', this.employees);
+        console.log('Employees:', this.employees);
       },
       error: (err) => {
-        console.error('❌ Failed to fetch employees:', err);
+        console.error('Failed to fetch employees:', err);
       }
     });
   }
@@ -63,7 +51,7 @@ export class EmployeeListComponent implements OnInit {
     this.employeeService.deleteEmployee(empId).subscribe({
       next: () => {
         alert("Employee deleted successfully!");
-        this.employees = this.employees.filter(e => e._id !== empId); // 👈 Update UI
+        this.employees = this.employees.filter(e => e._id !== empId);
       },
       error: (err) => {
         console.error("Delete failed:", err);

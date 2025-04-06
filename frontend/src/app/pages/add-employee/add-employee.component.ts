@@ -1,15 +1,3 @@
-/*import { Component } from '@angular/core';
-
-@Component({
-  selector: 'app-add-employee',
-  standalone: false,
-  templateUrl: './add-employee.component.html',
-  styleUrl: './add-employee.component.css'
-})
-export class AddEmployeeComponent {
-
-}*/
-
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Apollo } from 'apollo-angular';
@@ -81,7 +69,7 @@ export class AddEmployeeComponent {
           window.alert('Employee added successfully!');
         },
         error: (err) => {
-          console.error('❌ Add failed:', err);
+          console.error('Add failed:', err);
           window.alert('Add failed!');
         }
       });
@@ -89,6 +77,6 @@ export class AddEmployeeComponent {
   }
 
   cancel() {
-    this.router.navigate(['/employee-list']); // ✅ Go back on cancel
+    this.router.navigate(['/employee-list']);
   }
 }

@@ -1,19 +1,6 @@
-/*import { Component } from '@angular/core';
-
-@Component({
-  selector: 'app-signup',
-  standalone: false,
-  templateUrl: './signup.component.html',
-  styleUrl: './signup.component.css'
-})
-export class SignupComponent {
-
-}*/
-
-// pages/signup.component.ts:
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '../../services/auth.service'; // new
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -31,27 +18,20 @@ export class SignupComponent {
     });
   }
 
-  /*onSubmit() {
+  onSubmit() {
     if (this.signupForm.valid) {
       const { username, email, password } = this.signupForm.value;
-      console.log('Signup:', username, email, password);
-      // 🔜 Connect to GraphQL signup API here
+
+      this.authService.signup(username, email, password).subscribe({
+        next: (result: any) => {
+          console.log('Signup Success:', result.data.signup);
+          alert('Signup successful!');
+        },
+        error: (err) => {
+          console.error('Signup Error:', err.message);
+          alert('Signup failed');
+        }
+      });
     }
-  }*/
-    onSubmit() {
-      if (this.signupForm.valid) {
-        const { username, email, password } = this.signupForm.value;
-  
-        this.authService.signup(username, email, password).subscribe({
-          next: (result: any) => {
-            console.log('✅ Signup Success:', result.data.signup);
-            alert('Signup successful! ✅');
-          },
-          error: (err) => {
-            console.error('❌ Signup Error:', err.message);
-            alert('Signup failed ❌');
-          }
-        });
-      }
-    }
+  }
 }
