@@ -12,6 +12,8 @@ import { EmployeeListComponent } from './pages/employee-list/employee-list.compo
 import { EmployeeFilterPipe } from './pipes/employee-filter.pipe';
 import { AddEmployeeComponent } from './pages/add-employee/add-employee.component';
 import { EditEmployeeComponent } from './pages/edit-employee/edit-employee.component';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { EditEmployeeComponent } from './pages/edit-employee/edit-employee.compo
     GraphQLModule 
   ],
   providers: [
-    provideClientHydration(withEventReplay()) 
+    provideClientHydration(withEventReplay()),
+    { provide: LocationStrategy, useClass: HashLocationStrategy } 
   ],
   bootstrap: [AppComponent]
 })
