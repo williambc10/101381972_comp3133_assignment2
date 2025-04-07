@@ -134,6 +134,10 @@ const graphqlHttp = graphqlHTTP({
     graphiql: true
 })
 
+app.get('/', (req, res) => {
+    res.send('Server is running!');
+});
+
 app.use("/graphql", graphqlHttp)
 
 const connectDB = async() => {
