@@ -152,6 +152,6 @@ const connectDB = async() => {
 
 app.listen(PORT, () => {
     connectDB()
-    console.log(`Server running on port ${SERVER_PORT}`)
+    console.log(`Server running on port ${PORT}`)
     console.log("http://localhost:4000/graphql")
 });
