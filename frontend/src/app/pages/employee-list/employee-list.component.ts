@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from '../../services/employee.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-employee-list',
@@ -11,7 +12,7 @@ export class EmployeeListComponent implements OnInit {
   employees: any[] = [];
   searchText: string = '';
 
-  constructor(private employeeService: EmployeeService) {}
+  constructor(private employeeService: EmployeeService, private router: Router) {}
 
   ngOnInit(): void {
     this.employeeService.getAllEmployees().subscribe({
@@ -27,7 +28,7 @@ export class EmployeeListComponent implements OnInit {
 
   logout() {
     localStorage.removeItem('token');
-    window.location.href = '/login';
+    this.router.navigateByUrl('/login');
   }
 
   viewEmployee(emp: any) {
