@@ -13,7 +13,7 @@ const app = express()
 
 app.use(cors());
 
-const SERVER_PORT = 4000;
+const PORT = process.env.PORT || 4000;
 const MONGO_URI = process.env.MONGO_URI;
 
 const gqlSchema = buildSchema( 
@@ -150,7 +150,7 @@ const connectDB = async() => {
     }
 }
 
-app.listen(SERVER_PORT, () => {
+app.listen(PORT, () => {
     connectDB()
     console.log(`Server running on port ${SERVER_PORT}`)
     console.log("http://localhost:4000/graphql")
